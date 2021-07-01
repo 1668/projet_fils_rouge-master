@@ -1,0 +1,120 @@
+
+  /* flexbox fallback is the browser does not support display:grid */
+
+
+  
+  
+body{
+    background-color: black !important;
+}
+  
+  /* Styles, just for fun */
+  
+  *,*:before,*:after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background: #29343d;
+  }
+  @supports not (display: grid) {
+    body:before {
+      content: 'Sorry, seems like your browser doesn\'t support display: grid. Below is the flexbox fallback.';
+      display: block;
+      padding: 2rem 2rem 0;
+      color: #ffffff;
+      text-align: center;
+    }
+  }
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    background-color: white;
+    text-align: center;
+    transform-origin: center;
+    transform: rotateZ(45deg);
+    transition: box-shadow 250ms, transform 250ms;
+    animation: pulse 3s infinite;
+    font-weight: bold;
+    transform: rotateZ(0deg);
+  }
+  .dot1{
+      position: absolute;
+    left: 2em;
+    top: 5em;
+  }
+    .dot2{
+    left: 6em;
+    top: 20em;
+  }
+  .dot3{
+    left: 4em;
+    top: 8em;
+  }
+  .item:focus .dot1 {
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    transform:  rotateZ(45deg) scale(1.2);
+  }
+  .tooltip {
+    position: absolute;
+    padding: 0.25rem 1rem;
+    border-radius: 5px;
+    background: #29343d;
+    opacity: 0;
+    color: #cedfe9;
+    font-size: 0.875rem;
+    transition: opacity 500ms, transform 500ms;
+  }
+  .tooltip:before {
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: calc(50% - 10px);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #29343d;
+  }
+  .item:hover .tooltip,
+  .item:focus .tooltip {
+    opacity: 1;
+    transform: translateY(70px);
+  }
+  .item {
+    position: relative;
+    padding: 1vw;
+    background-position:  left bottom;
+    background-size: 150% 100%;
+    transition: background 500ms, outline 500ms;
+    background-position: top left;
+    outline: transparent;
+  }
+  .item:hover,
+  .item:focus {
+    background-position: top right;
+  }
+
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255,255,255, 0.5);
+    }
+    30% {
+        box-shadow: 0 0 0 50px rgba(255,255,255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+        }
+    }
+
+

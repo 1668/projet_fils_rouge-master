@@ -1,0 +1,46 @@
+
+.block1 {
+    background-color: darksalmon;
+}
+
+.footer{
+    background-color: #001233;
+}
+.img-footer{
+    width: 2em;
+
+}
+h1, h2, h3, h4, h5, p{
+    color: #001233;
+}
+.text-footer{
+    color: white;
+}
+h1, h2, h3, h4, h5{
+    font-family: "bukhari script";
+    
+}
+a{
+    text-decoration: none;
+}
+
+#logo-lab{
+    width: 10em;
+}
+
+.image{
+    background: url('assets/newsletter.jpg') no-repeat center center/cover ;
+    height:35em;
+}
+.contact{
+    color: rgb(155, 155, 155);
+}
+.mail{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* equipe */
+.temoignage{
+    color: #6b7383;
+}
