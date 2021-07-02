@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+@font-face {
+    font-family: "glacial indifferent" "bukhari script";
+    src: url(https://www.dafont.com/fr/bukhari-script.font),
+        url(https://www.1001fonts.com/glacial-indifference-font.html);
+}
+
 body, footer{
 margin: 0;
 padding: 0;
@@ -48,7 +55,161 @@ a{
     margin-left: auto;
     margin-right: auto;
 }
+/* accueil */
+.grid{
+    display:flex;
+    justify-content:center;
+    position: absolute;
+}
 
+.diamond {
+    position: relative;
+    z-index: 2;
+    width: 2em;
+    height: 2em;
+    border-radius: 100%;
+    box-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    background-image: linear-gradient(to top left, #ddd 0%, #fff 100%);
+    text-align: center;
+    transform-origin: center;
+    transform: rotateZ(45deg);
+    transition: box-shadow 250ms, transform 250ms;
+    animation: pulse 2s infinite;
+}
+
+.dot1{
+    top: 46em;
+    left: 25em;
+}
+.dot2{
+    top: 70em;
+    left: 70em;
+}
+.dot3{
+    top: 55em;
+    left: 110em;
+}
+.item:hover .diamond,
+.item:focus .diamond {
+    transform:  rotateZ(45deg) scale(1.2);
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 1;
+    padding: 0.25rem 1rem;
+    border-radius: 5px;
+    background: #29343d;
+    opacity: 0;
+    color: #cedfe9;
+    font-size: 0.875rem;
+    transition: opacity 500ms, transform 500ms;
+}
+
+.tooltip:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 10px);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #29343d;
+}
+
+.item:hover .tooltip,
+.item:focus .tooltip {
+    opacity: 1;
+    transform: translateY(30px) ;
+}
+
+.item {
+    position: absolute;
+    padding: 1vw;
+    background-position:  left bottom;
+    background-size: 150% 100%;
+    transition: background 500ms, outline 500ms;
+    background-position: top;
+    outline: transparent;
+}
+
+.item:hover,
+.item:focus {
+    background-position: top;
+}
+
+.item:focus {
+    outline: 2px solid #3eabfa;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255,255,255, 0.5);
+    }
+    30% {
+        box-shadow: 0 0 0 50px rgba(255,255,255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+        }
+    }
+
+@media screen and (max-width: 400px){
+    .dot1{
+        position: absolute;
+        top: 30em;
+        left: 4em;
+    }
+    .dot2{
+        position: absolute;
+        top: 45em;
+        left: 18em;
+    }
+    .dot3{
+        position: absolute;
+        top: 35em;
+        left: 30em;
+    }
+
+}
+@media screen and (min-width: 400px) and (max-width: 768px) {
+    .dot1{
+        position: absolute;
+        top: 50em;
+        left: 8em;
+    }
+    .dot2{
+        position: absolute;
+        top: 78em;
+        left: 40em;
+    }
+    .dot3{
+        position: absolute;
+        top: 58em;
+        left: 65em;
+    }
+}
+
+/* rellax */
+.accueil{
+    position: absolute;
+    width: 170em;
+}
+
+.accueil:nth-child(1){
+    top: 9em;
+    left: 0 em;
+
+}
+.accueil:nth-child(2){
+    top: 6em;
+    left: 0 em;
+}
+.accueil:nth-child(3){
+    top:20em;
+    left: 0em;
+}
 /* app */
 .block1{
     background: url("assets/anime/app/fond_section_rose1.png") no-repeat center center/cover;
@@ -93,7 +254,7 @@ a{
 }
 
 
- @media screen and (min-width: 750px){
+ @media screen and (min-width:400px) and (max-width: 750px){
     .fond-engagement{    
         display: none;
     }
@@ -127,7 +288,7 @@ a{
 }
 .carousel-control-prev,
 .carousel-control-next{
-      top: 20%;
+    top: 20%;
 }
 
 /* parteniares */
