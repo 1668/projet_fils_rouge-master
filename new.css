@@ -51,10 +51,13 @@ a{
 .contact, .temoignage{
     color: #6b7383;;
 }
+/*
 .mail{
     margin-left: auto;
     margin-right: auto;
 }
+*/
+
 /* accueil */
 .grid{
     display:flex;
@@ -240,17 +243,22 @@ a{
     position: absolute;
 }
 
+/*
+left:65em;
+left: 15em;
+left: 75em;
+*/
 .fond-engagement:nth-child(1){
-    left:65em;
-    top:10em;
+    z-index: -1;
+    top:70em;
 }
 .fond-engagement:nth-child(2){
-    left: 15em;
-    top: 70em;
+    z-index: -1;
+    /* top: 70em; */
 }
 .fond-engagement:nth-child(3){
-    left: 75em;
-    top:67em;
+    z-index: -1;
+    top: 40em;
 }
 
 
@@ -296,17 +304,21 @@ a{
     width: 25em;
     position: absolute;
 }
-
+/*
+left:81em;
+left: 5em;
+left: 75em;
+*/
 .partenaires:nth-child(1){
-    left:81em;
+    z-index: -1;
     top:60em;
 }
 .partenaires:nth-child(2){
-    left: 5em;
+    z-index: -1;
     top: 35em;
 }
 .partenaires:nth-child(3){
-    left: 75em;
+    z-index: -1;
     top: 157em;
 }
 
